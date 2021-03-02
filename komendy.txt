@@ -1,0 +1,57 @@
+Autoprefixer CLI:
+
+Install:
+npm install --global autoprefixer-cli
+
+Usage:
+autoprefixer-cli -o main.prefixed.css main.css
+
+See full documentation by:
+autoprefixer-cli -h
+
+
+
+html-validate
+
+Usage
+npm install -g html-validate
+html-validate FILENAME..
+
+Configuration
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+
+  "rules": {
+    "close-order": "error"
+    "void": ["warn", {"style": "omit"}]
+  }
+}
+
+Example:
+<p>
+  <button>Click me!</button>
+  <div id="show-me">
+    Lorem ipsum
+  </div>
+</p>
+
+1:1  error  Element <p> is implicitly closed by adjacent <div>  no-implicit-close
+  2:2  error  Button is missing type attribute                    button-type
+  6:4  error  Unexpected close-tag, expected opening tag          close-order
+
+Test:
+npm test
+
+Lint:
+npm run eslint
+
+Build:
+npm run build
+
+to build documentation use:
+npm run build:docs
+
+the documentation can be served locally using:
+npm start
